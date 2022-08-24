@@ -1,0 +1,51 @@
+.Content {
+	display: flex;
+	width: 90%;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+.Content > li {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+	background-color: #fefefe;
+	padding: 5px 15px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.15s linear;
+}
+.Content > li:hover {
+	background: #3f3966ad;
+	transform: scale(1.1, 1.1);
+	color: white;
+}
+
+.Overlay {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(10px);
+	background-color: rgba(0, 0, 0, 0.075);
+}
+
+.Card {
+	background-color: #ffffffad;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+	min-width: 30vw;
+	border-radius: 10px;
+	padding: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.Card h2 {
+	border-bottom: 1px solid gray;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
