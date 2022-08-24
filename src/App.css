@@ -20,60 +20,9 @@ ul {
 	background-color: #eff1f7;
 	display: flex;
 }
-.Navigation {
-	background-color: #3c3759;
-	min-width: 20vw;
-	color: #e6e6eb;
-	font-size: 1.4rem;
-	height: 100vh;
-	display: flex;
-	justify-content: end;
-	align-items: center;
-}
-.Navigation ul {
-	display: flex;
-	flex-direction: column;
-	width: 94%;
-}
-.Navigation ul li {
-	border-top-left-radius: 30px;
-	border-bottom-left-radius: 30px;
-	padding: 15px 20px;
-	cursor: pointer;
-	transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
-}
-.Navigation ul li:hover {
-	background-color: #eff1f7;
-	color: rgb(56, 56, 56);
-}
-.Search {
-	display: flex;
-	align-items: center;
-	background-color: #fefeff;
-	padding: 10px 15px;
-	border-radius: 30px;
-	font-size: 1.3rem;
-	width: 50%;
-	margin: 20px auto 40px auto;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
-}
-.Search > input {
-	background-color: inherit;
-	border: none;
-	outline: none;
-	margin-left: 10px;
-	font-size: 1.1rem;
-	width: 100%;
-	color: #575757;
-}
 .Main {
 	display: flex;
 	width: 100%;
 	flex-direction: column;
 	align-items: center;
-}
-.Content {
-	display: flex;
-	width: 90%;
-	gap: 20px;
 }
