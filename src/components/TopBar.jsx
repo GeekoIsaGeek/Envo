@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
-import { FiSearch } from 'react-icons/fi';
+import React from 'react';
+import Search from './Search';
 import Filters from './Filters/Filters';
-
 import styles from './Search.module.scss';
+import logo from '../images/Logo.svg';
 
 const TopBar = () => {
-	const [input, setInput] = useState('');
 	return (
 		<div className={styles.Wrapper}>
+			<img src={logo} alt='logo' className={styles.Logo} />
 			<Filters />
-			<div className={styles.Search}>
-				<FiSearch style={{ color: '#575757' }} />
-				<input
-					type='text'
-					placeholder='Search...'
-					value={input}
-					onChange={(e) => setInput(e.target.value)}
-				/>
-			</div>
+			<Search />
 		</div>
 	);
 };
