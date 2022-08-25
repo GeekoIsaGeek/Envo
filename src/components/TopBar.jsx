@@ -1,7 +1,7 @@
 import React from 'react';
-import Search from './Search';
+import Search from './Search/Search';
 import Filters from './Filters/Filters';
-import styles from './Search.module.scss';
+import styles from './Search/Search.module.scss';
 import logo from '../images/Logo.svg';
 
 const TopBar = () => {
