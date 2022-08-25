@@ -22,7 +22,15 @@ const initialState = [
 const WordsSlice = createSlice({
 	name: 'words',
 	initialState,
-	reducers: {},
+	reducers: {
+		shuffle: (state) => {
+			for (let i = state.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[state[i], state[j]] = [state[j], state[i]];
+			}
+		},
+	},
 });
 
 export default WordsSlice.reducer;
+export const { shuffle } = WordsSlice.actions;
