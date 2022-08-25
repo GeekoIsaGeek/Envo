@@ -1,13 +1,26 @@
 import React from 'react';
-import styles from './Content.module.css';
+import styles from './Content.module.scss';
 
-const Card = ({ showCard, setShowCard }) => {
+const Card = ({ showCard, setShowCard, data }) => {
+	const getDefinition = () => {
+		if (Array.isArray(data.definition)) {
+			return (
+				<ul>
+					{data.definition.map((elem, i) => {
+						return <li key={i}>{elem}</li>;
+					})}
+				</ul>
+			);
+		}
+		return <p>{data.definition}</p>;
+	};
+
 	if (showCard)
 		return (
 			<div className={styles.Overlay} onClick={() => setShowCard(false)}>
 				<div className={styles.Card}>
-					<h2>Check up on</h2>
-					<p>Es iseti magari ganmartebaa roooo</p>
+					<h2>{data.expression}</h2>
+					{getDefinition()}
 				</div>
 			</div>
 		);

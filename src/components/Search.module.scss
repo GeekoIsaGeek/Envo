@@ -1,3 +1,14 @@
+@use '../variables';
+
+.Wrapper {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-color: variables.$main-bg-color;
+	padding-bottom: 10px;
+	justify-content: center;
+}
+
 .Search {
 	display: flex;
 	align-items: center;
@@ -6,7 +17,6 @@
 	border-radius: 30px;
 	font-size: 1.3rem;
 	width: 50%;
-	margin: 30px auto 40px auto;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
 }
 .Search > input {

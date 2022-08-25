@@ -1,16 +1,28 @@
 import React, { useState } from 'react';
 import Card from './Card';
-import styles from './Content.module.css';
+import styles from './Content.module.scss';
+import { useSelector } from 'react-redux';
 
 const Content = () => {
 	const [showCard, setShowCard] = useState(false);
+	const [activeElementData, setActiveElementData] = useState(null);
+	const expressions = useSelector((state) => state.words);
+
+	const handleClick = (data) => {
+		setShowCard(true);
+		setActiveElementData(data);
+	};
 
 	return (
 		<ul className={styles.Content}>
-			<li onClick={() => setShowCard(true)}>Run out of</li>
-			<li>Look in on</li>
-			<li>Check up on</li>
-			<Card showCard={showCard} setShowCard={setShowCard} />
+			{expressions.map((el, i) => {
+				return (
+					<li key={i} onClick={() => handleClick(el)}>
+						{el.expression}
+					</li>
+				);
+			})}
+			<Card showCard={showCard} setShowCard={setShowCard} data={activeElementData} />
 		</ul>
 	);
 };

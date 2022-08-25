@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from './Navigation.module.css';
+import Filters from './Filters/Filters';
+import styles from './Navigation.module.scss';
 
 const Navigation = () => {
 	return (
 		<nav className={styles.Navigation}>
-			<ul>
+			<ul className={styles.NavList}>
 				<li>Words</li>
 				<li>Idioms</li>
 				<li>Phrasal Verbs</li>

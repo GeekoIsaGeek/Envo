@@ -1,0 +1,29 @@
+.Navigation {
+	background-color: #3c3759;
+	min-width: 20vw;
+	color: #e6e6eb;
+	font-size: 1.4rem;
+	height: max-content;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+.NavList {
+	display: flex;
+	justify-content: center;
+	width: 94%;
+	padding: 10px 0px;
+	gap: 3vw;
+}
+.NavList li {
+	padding: 5px 0;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+	border-bottom: 1px solid transparent;
+}
+.NavList li:hover {
+	border-color: white;
+}

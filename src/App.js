@@ -1,15 +1,15 @@
-import './App.css';
+import './App.scss';
 import Content from './components/Content/Content';
 import Main from './components/Main';
 import Navigation from './components/Navigation';
-import Search from './components/Search';
+import TopBar from './components/TopBar';
 
 function App() {
 	return (
 		<div className='App'>
 			<Navigation />
 			<Main>
-				<Search />
+				<TopBar />
 				<Content />
 			</Main>
 		</div>
