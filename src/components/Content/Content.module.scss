@@ -36,7 +36,7 @@
 .Card {
 	background-color: #ffffff;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
-	min-width: 30vw;
+	min-width: 40vw;
 	max-width: 60vw;
 	border-radius: 10px;
 	padding: 40px;
@@ -52,10 +52,11 @@
 	padding-bottom: 10px;
 	margin-bottom: 20px;
 	text-align: center;
+	font-size: 2.3rem;
 }
 .Card > ul,
 .Card > p {
-	font-size: 1.1rem;
+	font-size: 1.5rem;
 	font-style: italic;
 	font-weight: 500;
 }
@@ -69,17 +70,18 @@
 		margin-top: 20px;
 		width: 98%;
 		gap: 10px;
-	}
-}
-@media (max-width: 768px) {
-	.Card {
-		min-width: 70vw;
-		padding: 40px;
-		h2 {
-			width: 100%;
-		}
-		ul {
-			margin-left: 40px;
+		.Card {
+			min-width: 70vw;
+			padding: 40px;
+			h2 {
+				width: 100%;
+				font-size: 1.8rem;
+			}
+			ul,
+			p {
+				margin-left: 30px;
+				font-size: 1.3rem;
+			}
 		}
 	}
 }
@@ -92,6 +94,7 @@
 			padding: 30px;
 			h2 {
 				padding-bottom: 10px;
+				font-size: 1.3rem;
 			}
 			ul,
 			p {
