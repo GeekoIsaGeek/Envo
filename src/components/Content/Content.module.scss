@@ -50,12 +50,13 @@
 	margin-bottom: 20px;
 	text-align: center;
 }
+.Card > ul,
+.Card > p {
+	font-size: 1.1rem;
+	font-style: italic;
+}
 .Card > ul {
 	list-style: disc;
-	font-size: 1.1rem;
-}
-.Card p {
-	font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {

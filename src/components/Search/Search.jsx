@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FiSearch } from 'react-icons/fi';
 import styles from './Search.module.scss';
+import { useDispatch } from 'react-redux';
+import { setSearchFor } from '../../store/slices/FilterSlice';
 
 const Search = () => {
-	const [input, setInput] = useState('');
+	const dispatch = useDispatch();
 
 	return (
 		<div className={styles.Search}>
@@ -11,8 +13,7 @@ const Search = () => {
 			<input
 				type='text'
 				placeholder='Search...'
-				value={input}
-				onChange={(e) => setInput(e.target.value)}
+				onChange={(e) => dispatch(setSearchFor(e.target.value))}
 			/>
 		</div>
 	);

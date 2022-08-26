@@ -32,5 +32,6 @@ const WordsSlice = createSlice({
 	},
 });
 
+export const getAllExpressions = (state) => state.words;
 export default WordsSlice.reducer;
 export const { shuffle } = WordsSlice.actions;
