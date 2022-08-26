@@ -10,6 +10,7 @@
 }
 .Logo {
 	width: 80px;
+	margin-left: 10px;
 }
 
 .Search {
@@ -30,4 +31,42 @@
 	font-size: 1.1rem;
 	width: 100%;
 	color: #575757;
+}
+
+@media (max-width: 768px) {
+	.Wrapper {
+		flex-direction: column;
+	}
+	.Logo {
+		position: absolute;
+		left: 10px;
+		top: 20px;
+		width: 60px;
+	}
+	.Search {
+		width: 70vw;
+		padding: 5px 10px;
+		margin-bottom: 5px;
+		margin-top: -5px;
+		border-radius: 10px;
+		& > input {
+			font-size: 1rem;
+		}
+	}
+}
+
+@media (max-width: 420px) {
+	.Wrapper {
+		flex-direction: column-reverse;
+		padding: 0;
+	}
+	.Search {
+		max-width: max-content;
+		margin: 10px 5px 0 0;
+		border-radius: 10px;
+		align-self: end;
+	}
+	.Logo {
+		top: 10px;
+	}
 }
