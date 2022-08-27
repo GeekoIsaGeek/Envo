@@ -2,7 +2,7 @@ import React from 'react';
 import { IoShuffle } from 'react-icons/io5';
 import styles from './Filters.module.scss';
 import { useDispatch } from 'react-redux';
-import { shuffle } from '../../store/slices/WordsSlice';
+import { shuffle } from '../../store/slices/ExpressionsSlice';
 
 const Shuffle = () => {
 	const dispatch = useDispatch();

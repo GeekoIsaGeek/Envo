@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from './Card';
 import styles from './Content.module.scss';
 import { useSelector } from 'react-redux';
-import { getAllExpressions } from '../../store/slices/WordsSlice';
+import { getAllExpressions } from '../../store/slices/ExpressionsSlice';
 
 const Content = () => {
 	const [showCard, setShowCard] = useState(false);
