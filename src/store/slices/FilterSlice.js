@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	show: 'Expressions',
-	date: 'Newest',
 	searchFor: '',
 };
 

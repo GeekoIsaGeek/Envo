@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import styles from './Filters.module.scss';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { sortByDateAdded } from '../../store/slices/ExpressionsSlice';
 
 const SortBy = () => {
 	const [showSortingOptions, setShowSortingOptions] = useState(false);
 	const [sortBy, setSortBy] = useState('Newest');
+	const dispatch = useDispatch();
 
 	const handleSort = (value) => {
 		setSortBy(value);
 		setShowSortingOptions(!showSortingOptions);
+		dispatch(sortByDateAdded(value));
 	};
 	return (
 		<div className={styles.SortBy} onClick={() => setShowSortingOptions(!showSortingOptions)}>
