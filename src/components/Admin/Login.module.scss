@@ -1,0 +1,13 @@
+@use '../../variables';
+@import './Form';
+
+.Form {
+	@include form;
+	> button {
+		@include button;
+	}
+}
+.InputEmail,
+.InputPassword {
+	@include textInput;
+}

@@ -32,6 +32,9 @@ const ExpressionsSlice = createSlice({
 		setExpressionsType: (state, action) => {
 			state.expressionType = action.payload;
 		},
+		addNewExpression: (state, action) => {
+			state.expressions.push(action.payload);
+		},
 	},
 	extraReducers: {
 		[fetchData.fulfilled]: (state, action) => {
@@ -42,4 +45,4 @@ const ExpressionsSlice = createSlice({
 
 export const getAllExpressions = (state) => state.expressions.expressions;
 export default ExpressionsSlice.reducer;
-export const { shuffle, setExpressionsType } = ExpressionsSlice.actions;
+export const { shuffle, setExpressionsType, addNewExpression } = ExpressionsSlice.actions;
