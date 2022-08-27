@@ -2,15 +2,17 @@
 .Wrapper {
 	background-color: rgb(39, 39, 39);
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: 50px;
+	gap: 30px;
+	padding: 50px 0 20px 0;
 }
 .Form {
 	@include form;
+	// position: relative;
 	@media (max-width: 768px) {
 		padding-top: 50px;
 	}

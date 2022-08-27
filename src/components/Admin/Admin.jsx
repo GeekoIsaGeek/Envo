@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './Admin.module.scss';
-import { GoSignOut } from 'react-icons/go';
+import { RiLogoutCircleRLine } from 'react-icons/ri';
 import Login from './Login';
 import Select from './Select';
 import { useSelector, useDispatch } from 'react-redux';
@@ -75,7 +75,7 @@ const Admin = () => {
 				/>
 				<button>Add to Database</button>
 				<button className={styles.Signout} onClick={handleLogout}>
-					<GoSignOut />
+					Logout <RiLogoutCircleRLine />
 				</button>
 			</form>
 			<p className={styles.Note}>
