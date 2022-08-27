@@ -3,10 +3,11 @@ import styles from './Content.module.scss';
 
 const Card = ({ showCard, setShowCard, data }) => {
 	const getDefinition = () => {
-		if (Array.isArray(data.definition)) {
+		if (data.definition.includes(';')) {
+			const definitions = data.definition.trim().split(';');
 			return (
 				<ul>
-					{data.definition.map((elem, i) => {
+					{definitions.map((elem, i) => {
 						return <li key={i}>{elem}</li>;
 					})}
 				</ul>

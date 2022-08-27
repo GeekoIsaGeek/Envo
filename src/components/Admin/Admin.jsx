@@ -78,6 +78,9 @@ const Admin = () => {
 					<GoSignOut />
 				</button>
 			</form>
+			<p className={styles.Note}>
+				In order to define multiple definitions, put ; at the end of every sentence
+			</p>
 		</div>
 	);
 };
