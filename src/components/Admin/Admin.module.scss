@@ -115,5 +115,12 @@ form button {
 @media (max-width: 768px) {
 	.Form {
 		width: 90vw;
+		.Categories {
+			padding: 5px 0;
+			li {
+				font-size: 0.9rem;
+				font-weight: 500;
+			}
+		}
 	}
 }
