@@ -12,6 +12,7 @@
 }
 .Form {
 	@include form;
+	width: 50%;
 	@media (max-width: 768px) {
 		padding-top: 50px;
 	}
@@ -20,6 +21,7 @@
 .Definition,
 .Examples {
 	@include textInput;
+	width: 80%;
 }
 .Definition,
 .Examples {
@@ -51,11 +53,15 @@ form button {
 		}
 	}
 }
+.Select {
+	width: 80%;
+}
 .Category {
 	@include textInput;
 	display: flex;
 	justify-content: space-between;
 	align-items: Center;
+	width: 100%;
 	cursor: pointer;
 	color: rgb(99, 99, 99);
 }
@@ -96,4 +102,18 @@ form button {
 	font-style: italic;
 	font-size: 18px;
 	max-width: 80vw;
+}
+
+@media (max-width: 960px) {
+	.ExpressionInput,
+	.Definition,
+	.Examples,
+	.Select {
+		width: auto;
+	}
+}
+@media (max-width: 768px) {
+	.Form {
+		width: 90vw;
+	}
 }

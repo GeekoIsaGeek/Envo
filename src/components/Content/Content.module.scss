@@ -22,7 +22,7 @@
 
 .Overlay {
 	position: absolute;
-	height: 100vh;
+	min-height: 100vh;
 	width: 100vw;
 	top: 0;
 	right: 0;
@@ -38,10 +38,10 @@
 	background-color: #ffffff;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
 		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-	min-width: 30vw;
-	max-width: 50vw;
+	min-width: 30%;
+	max-width: 70%;
 	border-radius: 10px;
-	padding: 40px;
+	padding: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -91,20 +91,20 @@
 		}
 		.Card {
 			min-width: 80vw;
-			padding: 40px;
+			padding: 30px;
 			h2 {
 				width: 100%;
-				font-size: 1.8rem;
+				font-size: 1.5rem;
 			}
 			ul,
 			p {
-				font-size: 1.3rem;
+				font-size: 1.2rem;
 			}
 			.HeaderExamples {
 				font-size: 1.3rem !important;
 			}
 			.Examples {
-				font-size: 1.2rem;
+				font-size: 1.1rem;
 				width: 100%;
 			}
 		}
