@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../Firebase-Config';
+import { decomposeString } from '../../utils';
 
 export const fetchData = createAsyncThunk('expressions/fetchData', async (arg, { getState }) => {
 	const state = getState().expressions;
@@ -49,12 +50,14 @@ const ExpressionsSlice = createSlice({
 	extraReducers: {
 		[fetchData.fulfilled]: (state, action) => {
 			state.expressions = action.payload.map((elem) => {
-				//check if the phrase/expression has "multiple definitions" (multiple sentences in a single string separated by ,,) if so, actually separate and save as an array
-				if (elem.definition.trim().includes(',,')) {
-					const definitions = elem.definition.split(',,');
-					return { ...elem, definition: definitions };
-				}
-				return { ...elem };
+				//check if the phrase/expression has "multiple definitions and examples" (multiple sentences in a single string separated by ,,) if so, actually separate and save as arrays
+				const definitions = decomposeString(elem.definition);
+				const examples = decomposeString(elem?.examples);
+				return {
+					...elem,
+					definition: definitions ? definitions : elem.definition,
+					examples: examples ? examples : elem.examples,
+				};
 			});
 		},
 	},

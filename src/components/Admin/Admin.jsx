@@ -16,6 +16,7 @@ const Admin = () => {
 	const formRef = useRef();
 	const expressionRef = useRef();
 	const definitionRef = useRef();
+	const examplesRef = useRef();
 	const dispatch = useDispatch();
 	const { authenticated, status } = useSelector((store) => store.admin);
 	const expressionType = useSelector((state) => state.expressions.expressionType);
@@ -26,7 +27,8 @@ const Admin = () => {
 		e.preventDefault();
 		const expression = capitalize(expressionRef.current.value);
 		const definition = capitalize(definitionRef.current.value);
-		const obj = { expression, definition, date_added: Date.now() };
+		const examples = capitalize(examplesRef.current.value);
+		const obj = { expression, definition, date_added: Date.now(), examples };
 		if (category) {
 			dispatch(addToDatabase({ obj, category }));
 			expressionType === category && dispatch(addNewExpression(obj)); //update current list of expressions
@@ -71,6 +73,7 @@ const Admin = () => {
 					ref={definitionRef}
 					className={styles.Definition}
 				/>
+				<textarea placeholder='Examples...' ref={examplesRef} className={styles.Examples} />
 				<button>Add to Database</button>
 				<button className={styles.Home} onClick={() => navigate('/')}>
 					<IoHome />
@@ -80,7 +83,7 @@ const Admin = () => {
 				</button>
 			</form>
 			<p className={styles.Note}>
-				In order to define multiple definitions, put ,, at the end of every sentence
+				In order to define multiple definitions or examples, put ,, at the end of every sentence
 			</p>
 		</div>
 	);

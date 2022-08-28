@@ -17,10 +17,12 @@
 	}
 }
 .ExpressionInput,
-.Definition {
+.Definition,
+.Examples {
 	@include textInput;
 }
-.Definition {
+.Definition,
+.Examples {
 	resize: none;
 }
 form button {
