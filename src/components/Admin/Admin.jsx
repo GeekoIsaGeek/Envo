@@ -8,6 +8,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../Firebase-Config';
 import { addNewExpression } from '../../store/slices/ExpressionsSlice';
 import { addToDatabase, setStatus } from '../../store/slices/AdminSlice';
+import { capitalize } from '../../utils/capitalize';
 
 const Admin = () => {
 	const formRef = useRef();
@@ -16,19 +17,13 @@ const Admin = () => {
 	const dispatch = useDispatch();
 	const { authenticated, status } = useSelector((store) => store.admin);
 	const expressionType = useSelector((state) => state.expressions.expressionType);
-
 	const [category, setCategory] = useState(null);
 
 	const addNewData = (e) => {
 		e.preventDefault();
-
-		const capitalize = (str) => {
-			return str.replace(str[0], str[0].toUpperCase());
-		};
 		const expression = capitalize(expressionRef.current.value);
 		const definition = capitalize(definitionRef.current.value);
 		const obj = { expression, definition, date_added: Date.now() };
-
 		if (category) {
 			dispatch(addToDatabase({ obj, category }));
 			expressionType === category && dispatch(addNewExpression(obj)); //update current list of expressions
@@ -48,6 +43,7 @@ const Admin = () => {
 		signOut(auth);
 	};
 
+	const notificationStyles = { color: 'green', fontSize: '1.1rem', fontWeight: '600' };
 	if (!authenticated) {
 		return (
 			<div className={styles.Wrapper}>
@@ -55,7 +51,6 @@ const Admin = () => {
 			</div>
 		);
 	}
-	const notificationStyles = { color: 'green', fontSize: '1.1rem', fontWeight: '600' };
 
 	return (
 		<div className={styles.Wrapper}>

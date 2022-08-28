@@ -5,7 +5,6 @@ import { setExpressionsType } from '../../store/slices/ExpressionsSlice';
 
 const Navigation = () => {
 	const dispatch = useDispatch();
-
 	return (
 		<nav className={styles.Navigation}>
 			<ul className={styles.NavList}>

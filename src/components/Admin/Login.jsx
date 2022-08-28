@@ -12,7 +12,6 @@ const Login = () => {
 		e.preventDefault();
 		const email = emailRef.current.value;
 		const password = passwordRef.current.value;
-
 		signInWithEmailAndPassword(auth, email, password).catch((err) => setAuthError(err.message));
 	};
 

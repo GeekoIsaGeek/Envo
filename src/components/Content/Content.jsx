@@ -10,13 +10,13 @@ const Content = () => {
 	const expDefPairs = useSelector(getAllExpressions);
 	const show = useSelector((state) => state.filters.show);
 	const searchFor = useSelector((state) => state.filters.searchFor);
-
 	const handleClick = (data) => {
 		setShowCard(true);
 		setActiveElementData(data);
 	};
 
 	const getDefinition = (value) => {
+		//if the expression has multiple definitions, render any of them on every state change
 		if (Array.isArray(value)) {
 			const randIdx = Math.floor(Math.random() * value.length);
 			return value[randIdx];
@@ -26,7 +26,6 @@ const Content = () => {
 
 	const filterBySearchValue = () => {
 		const searchInput = searchFor.trim().toLowerCase();
-
 		if (searchInput) {
 			return expDefPairs.filter((pair) => {
 				return show === 'Expressions'

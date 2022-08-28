@@ -8,7 +8,6 @@ const SortBy = () => {
 	const [showSortingOptions, setShowSortingOptions] = useState(false);
 	const [sortBy, setSortBy] = useState('Newest');
 	const dispatch = useDispatch();
-
 	const handleSort = (value) => {
 		setSortBy(value);
 		setShowSortingOptions(!showSortingOptions);
@@ -16,7 +15,7 @@ const SortBy = () => {
 	};
 	return (
 		<div className={styles.SortBy} onClick={() => setShowSortingOptions(!showSortingOptions)}>
-			{`${sortBy}` || 'Sort By'}
+			{sortBy || 'Sort By'}
 			{showSortingOptions ? <IoIosArrowUp /> : <IoIosArrowDown />}
 			{showSortingOptions && (
 				<ul onMouseLeave={() => setShowSortingOptions(false)}>

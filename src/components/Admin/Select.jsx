@@ -11,7 +11,7 @@ const Select = ({ category, setCategory }) => {
 	return (
 		<div className={styles.Select} onClick={() => setShowMenu(!showMenu)}>
 			<div className={styles.Category}>
-				{!category ? 'Category' : category} <IoIosArrowDown />
+				{!category ? 'Category' : category} {showMenu ? <IoIosArrowUp /> : <IoIosArrowDown />}
 			</div>
 			{showMenu && (
 				<ul className={styles.Categories}>
