@@ -29,7 +29,7 @@ const Admin = () => {
 		const definition = capitalize(definitionRef.current.value);
 		const examples = capitalize(examplesRef.current.value);
 		const obj = { expression, definition, date_added: Date.now(), examples };
-		if (category) {
+		if (category && expression && definition) {
 			dispatch(addToDatabase({ obj, category }));
 			expressionType === category && dispatch(addNewExpression(obj)); //update current list of expressions
 		}
