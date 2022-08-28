@@ -4,7 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import { fetchData } from './store/slices/ExpressionsSlice';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Admin from './components/Admin/Admin';
 import useAuth from './hooks/useAuth';
 //prettier-ignore
@@ -28,6 +28,7 @@ function App() {
 					</React.Fragment>
 				} />
 				<Route path='/admin' element={<Admin />} />
+				<Route path='*' element={<Navigate to='/'/>}/>
 			</Routes>
 		</div>
 	);

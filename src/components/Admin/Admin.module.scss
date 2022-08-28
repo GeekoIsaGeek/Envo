@@ -12,7 +12,6 @@
 }
 .Form {
 	@include form;
-	// position: relative;
 	@media (max-width: 768px) {
 		padding-top: 50px;
 	}
@@ -78,6 +77,15 @@ form button {
 	@media (max-width: 768px) {
 		font-size: 1rem;
 		padding: 5px;
+	}
+}
+.Home {
+	position: absolute;
+	top: -20px;
+	left: 0px;
+	border-radius: 3px;
+	&:hover {
+		background-color: rgb(119, 119, 119);
 	}
 }
 

@@ -9,6 +9,8 @@ import { auth } from '../../Firebase-Config';
 import { addNewExpression } from '../../store/slices/ExpressionsSlice';
 import { addToDatabase, setStatus } from '../../store/slices/AdminSlice';
 import { capitalize } from '../../utils/capitalize';
+import { useNavigate } from 'react-router-dom';
+import { IoHome } from 'react-icons/io5';
 
 const Admin = () => {
 	const formRef = useRef();
@@ -18,6 +20,7 @@ const Admin = () => {
 	const { authenticated, status } = useSelector((store) => store.admin);
 	const expressionType = useSelector((state) => state.expressions.expressionType);
 	const [category, setCategory] = useState(null);
+	const navigate = useNavigate();
 
 	const addNewData = (e) => {
 		e.preventDefault();
@@ -69,6 +72,9 @@ const Admin = () => {
 					className={styles.Definition}
 				/>
 				<button>Add to Database</button>
+				<button className={styles.Home} onClick={() => navigate('/')}>
+					<IoHome />
+				</button>
 				<button className={styles.Signout} onClick={handleLogout}>
 					Logout <RiLogoutCircleRLine />
 				</button>
