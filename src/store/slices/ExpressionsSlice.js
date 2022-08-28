@@ -48,7 +48,14 @@ const ExpressionsSlice = createSlice({
 	},
 	extraReducers: {
 		[fetchData.fulfilled]: (state, action) => {
-			state.expressions = action.payload;
+			state.expressions = action.payload.map((elem) => {
+				//check if the phrase/expression has "multiple definitions" (multiple sentences in a single string separated by ,,) if so, actually separate and save as an array
+				if (elem.definition.trim().includes(',,')) {
+					const definitions = elem.definition.split(',,');
+					return { ...elem, definition: definitions };
+				}
+				return { ...elem };
+			});
 		},
 	},
 });

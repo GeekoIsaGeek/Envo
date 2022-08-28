@@ -1,15 +1,13 @@
 import React from 'react';
 import styles from './Content.module.scss';
-import { capitalize } from '../../utils/capitalize';
+import { capitalize } from '../../utils';
 
 const Card = ({ showCard, setShowCard, data }) => {
 	const getDefinition = () => {
-		//check if the phrase/expression has multiple definitions (separated by ;) if so, capitalize each one
-		if (data.definition.includes(';')) {
-			const definitions = data.definition.split(';');
+		if (Array.isArray(data.definition)) {
 			return (
 				<ul>
-					{definitions.map((elem, i) => {
+					{data.definition.map((elem, i) => {
 						return <li key={i}>{capitalize(elem.trim())}</li>;
 					})}
 				</ul>

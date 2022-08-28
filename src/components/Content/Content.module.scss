@@ -36,7 +36,8 @@
 
 .Card {
 	background-color: #ffffff;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+		rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 	min-width: 30vw;
 	max-width: 50vw;
 	border-radius: 10px;
@@ -46,13 +47,13 @@
 	align-items: center;
 	flex-direction: column;
 	color: #f5eddf;
-	background-color: #352f40;
+	background-color: #33303a;
 }
 .Card h2 {
 	border-bottom: 1px solid #f5eddf;
 	padding-bottom: 10px;
 	margin-bottom: 20px;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	font-weight: 600;
 	width: 100%;
 	text-align: center;
@@ -60,8 +61,8 @@
 .Card > ul,
 .Card > p {
 	font-size: 1.5rem;
-	font-style: italic;
 	font-weight: 500;
+	padding: 0 20px;
 }
 .Card > ul {
 	list-style: disc;

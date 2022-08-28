@@ -8,7 +8,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../Firebase-Config';
 import { addNewExpression } from '../../store/slices/ExpressionsSlice';
 import { addToDatabase, setStatus } from '../../store/slices/AdminSlice';
-import { capitalize } from '../../utils/capitalize';
+import { capitalize } from '../../utils';
 import { useNavigate } from 'react-router-dom';
 import { IoHome } from 'react-icons/io5';
 
@@ -80,7 +80,7 @@ const Admin = () => {
 				</button>
 			</form>
 			<p className={styles.Note}>
-				In order to define multiple definitions, put ; at the end of every sentence
+				In order to define multiple definitions, put ,, at the end of every sentence
 			</p>
 		</div>
 	);
