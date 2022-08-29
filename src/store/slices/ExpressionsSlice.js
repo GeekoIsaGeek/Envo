@@ -52,7 +52,7 @@ const ExpressionsSlice = createSlice({
 			state.expressions = action.payload.map((elem) => {
 				//check if the phrase/expression has "multiple definitions and examples" (multiple sentences in a single string separated by ,,) if so, actually separate and save as arrays
 				const definitions = decomposeString(elem.definition);
-				const examples = decomposeString(elem?.examples);
+				const examples = decomposeString(elem.examples);
 				return {
 					...elem,
 					definition: definitions ? definitions : elem.definition,

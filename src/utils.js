@@ -12,3 +12,12 @@ export const decomposeString = (str) => {
 	}
 	return;
 };
+
+export const getListItems = (str) => {
+	if (Array.isArray(str)) {
+		return str.map((elem, i) => {
+			return <li key={i}>{capitalize(elem.trim())}</li>;
+		});
+	}
+	return <p>{capitalize(str?.trim())}</p>;
+};
