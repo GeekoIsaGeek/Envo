@@ -36,7 +36,7 @@ const Navigation = () => {
 					onClick={(e) => handleClick(e.target.innerText)}
 					style={{ borderColor: type === 'Common Phrases' ? 'white' : 'transparent' }}
 				>
-					Common Phrases
+					Basic Phrases
 				</li>
 			</ul>
 		</nav>
