@@ -34,7 +34,7 @@ const Navigation = () => {
 				</li>
 				<li
 					onClick={(e) => handleClick(e.target.innerText)}
-					style={{ borderColor: type === 'Common Phrases' ? 'white' : 'transparent' }}
+					style={{ borderColor: type === 'Basic Phrases' ? 'white' : 'transparent' }}
 				>
 					Basic Phrases
 				</li>

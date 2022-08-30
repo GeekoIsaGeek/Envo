@@ -18,7 +18,7 @@ const Select = ({ category, setCategory }) => {
 					<li onClick={(e) => handleSelect(e.target.innerText)}>Words</li>
 					<li onClick={(e) => handleSelect(e.target.innerText)}>Idioms</li>
 					<li onClick={(e) => handleSelect(e.target.innerText)}>Phrasal Verbs</li>
-					<li onClick={(e) => handleSelect(e.target.innerText)}>Common Phrases</li>
+					<li onClick={(e) => handleSelect(e.target.innerText)}>Basic Phrases</li>
 				</ul>
 			)}
 		</div>
