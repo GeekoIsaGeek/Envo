@@ -6,6 +6,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	margin: 20px auto;
+	padding-bottom: 40px;
 }
 .Content > li {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
@@ -25,7 +26,7 @@
 }
 
 .Overlay {
-	position: absolute;
+	position: fixed;
 	min-height: 100vh;
 	width: 100vw;
 	top: 0;

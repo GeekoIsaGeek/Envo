@@ -8,7 +8,7 @@ Every feature was designed to solve problems I usually come across while taking 
 
 -  React
 -  React-Redux, RTK
--  React-Router
+-  React-Router-Dom
 -  Sass
 -  Firebase (Auth,Firestore)
 

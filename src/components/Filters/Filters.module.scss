@@ -100,5 +100,12 @@
 @media (max-width: 420px) {
 	.Wrapper {
 		margin: 0;
+		.SortBy,
+		.Toggler {
+			ul {
+				bottom: -66px;
+				padding: 5px 0;
+			}
+		}
 	}
 }

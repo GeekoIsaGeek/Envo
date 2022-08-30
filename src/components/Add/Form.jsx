@@ -36,7 +36,7 @@ const Form = ({ formRef }) => {
 		signOut(auth);
 	};
 
-	const notificationStyles = { color: 'green', fontSize: '1.1rem', fontWeight: '600' };
+	const notificationStyles = { color: 'green', fontSize: '1.1rem', fontWeight: '500' };
 	return (
 		<form onSubmit={addNewData} className={styles.Form} ref={formRef}>
 			{status === 'added' && <p style={notificationStyles}>New data was added!</p>}
