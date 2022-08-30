@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from 'react';
-import styles from './Admin.module.scss';
+import styles from './Add.module.scss';
 import Login from './Login';
 import { useSelector, useDispatch } from 'react-redux';
-import { setStatus } from '../../store/slices/AdminSlice';
+import { setStatus } from '../../store/slices/AddSlice';
 import Form from './Form';
 
-const Admin = () => {
+const Add = () => {
 	const formRef = useRef();
 	const dispatch = useDispatch();
-	const { authenticated, status } = useSelector((store) => store.admin);
+	const { authenticated, status } = useSelector((store) => store.add);
 
 	useEffect(() => {
 		if (status === 'added') {
@@ -37,4 +37,4 @@ const Admin = () => {
 	);
 };
 
-export default Admin;
+export default Add;

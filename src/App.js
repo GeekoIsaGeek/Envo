@@ -5,8 +5,8 @@ import { fetchData } from './store/slices/ExpressionsSlice';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Admin from './components/Admin/Admin';
 import useAuth from './hooks/useAuth';
+import Add from './components/Add/Add';
 //prettier-ignore
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
 						<Navigation/>
 					</React.Fragment>
 				} />
-				<Route path='/admin' element={<Admin />} />
+				<Route path='/add' element={<Add />} />
 				<Route path='*' element={<Navigate to='/'/>}/>
 			</Routes>
 		</div>

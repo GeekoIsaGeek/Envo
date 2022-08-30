@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
-import styles from './Admin.module.scss';
+import styles from './Add.module.scss';
 
 const Select = ({ category, setCategory }) => {
 	const [showMenu, setShowMenu] = useState(false);

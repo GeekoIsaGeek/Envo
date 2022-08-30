@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { auth } from '../Firebase-Config';
 import { onAuthStateChanged } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
-import { setAuthenticated } from '../store/slices/AdminSlice';
+import { setAuthenticated } from '../store/slices/AddSlice';
 
 const useAuth = () => {
 	const dispatch = useDispatch();

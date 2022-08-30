@@ -4,10 +4,10 @@ import Select from './Select';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../Firebase-Config';
 import { addNewExpression } from '../../store/slices/ExpressionsSlice';
-import { addToDatabase } from '../../store/slices/AdminSlice';
+import { addToDatabase } from '../../store/slices/AddSlice';
 import { capitalize } from '../../utils';
 import { IoHome } from 'react-icons/io5';
-import styles from './Admin.module.scss';
+import styles from './Add.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -18,7 +18,7 @@ const Form = ({ formRef }) => {
 	const expressionType = useSelector((state) => state.expressions.expressionType);
 	const [category, setCategory] = useState(null);
 	const navigate = useNavigate();
-	const { status } = useSelector((store) => store.admin);
+	const { status } = useSelector((store) => store.add);
 	const dispatch = useDispatch();
 
 	const addNewData = (e) => {
