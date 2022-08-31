@@ -49,7 +49,7 @@ const Form = ({ formRef }) => {
 			/>
 			<textarea placeholder='Definition...' ref={definitionRef} className={styles.Definition} />
 			<textarea placeholder='Examples...' ref={examplesRef} className={styles.Examples} />
-			<button>Add to Database</button>
+			<button>Add</button>
 			<button className={styles.Home} onClick={() => navigate('/')}>
 				<IoHome />
 			</button>
