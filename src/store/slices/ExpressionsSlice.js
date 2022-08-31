@@ -1,16 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../Firebase-Config';
-import { decomposeString } from '../../utils';
+import { decomposeString, sortByDateAdded } from '../../utils';
 
 export const fetchData = createAsyncThunk('expressions/fetchData', async (arg, { getState }) => {
-	const state = getState().expressions;
+	const type = getState().expressions.expressionType;
+	const date = getState().filters.date;
+
 	try {
-		const collectionRef = collection(db, state.expressionType);
+		const collectionRef = collection(db, type);
 		const querySnapshot = await getDocs(collectionRef);
 		let data = [];
 		querySnapshot.forEach((doc) => data.push(doc.data()));
-		return data;
+		return sortByDateAdded(data, date);
 	} catch (err) {
 		console.error(err.message);
 	}
@@ -21,7 +23,6 @@ const ExpressionsSlice = createSlice({
 	initialState: {
 		expressionType: 'Words',
 		expressions: [],
-		error: null,
 	},
 	reducers: {
 		shuffle: (state) => {
@@ -39,12 +40,8 @@ const ExpressionsSlice = createSlice({
 		addNewExpression: (state, action) => {
 			state.expressions.push(action.payload);
 		},
-		sortByDateAdded: (state, action) => {
-			if (action.payload === 'Oldest') {
-				state.expressions.sort((a, b) => a.date_added - b.date_added);
-			} else {
-				state.expressions.sort((a, b) => b.date_added - a.date_added);
-			}
+		sortByDate: (state, action) => {
+			state.expressions = sortByDateAdded(state.expressions, action.payload);
 		},
 	},
 	extraReducers: {
@@ -65,5 +62,5 @@ const ExpressionsSlice = createSlice({
 
 export const getAllExpressions = (state) => state.expressions.expressions;
 export default ExpressionsSlice.reducer;
-export const { shuffle, setExpressionsType, addNewExpression, sortByDateAdded } =
+export const { shuffle, setExpressionsType, addNewExpression, showNExpressions, sortByDate } =
 	ExpressionsSlice.actions;

@@ -3,17 +3,23 @@ import Card from './Card';
 import styles from './Content.module.scss';
 import { useSelector } from 'react-redux';
 import { getAllExpressions } from '../../store/slices/ExpressionsSlice';
+import { returnNExpressions } from '../../utils';
 
 const Content = () => {
 	const [showCard, setShowCard] = useState(false);
 	const [activeElementData, setActiveElementData] = useState(null);
-	const expDefPairs = useSelector(getAllExpressions);
+	let allExpressions = useSelector(getAllExpressions);
 	const show = useSelector((state) => state.filters.show);
 	const searchFor = useSelector((state) => state.filters.searchFor);
+	const showN = useSelector((state) => state.filters.showN);
 	const handleClick = (data) => {
 		setShowCard(true);
 		setActiveElementData(data);
 	};
+
+	if (showN !== 'All') {
+		allExpressions = returnNExpressions(allExpressions, showN);
+	}
 
 	const getDefinition = (value) => {
 		//if the expression has multiple definitions, render any of them on every state change
@@ -27,13 +33,13 @@ const Content = () => {
 	const filterBySearchValue = () => {
 		const searchInput = searchFor.trim().toLowerCase();
 		if (searchInput) {
-			return expDefPairs.filter((pair) => {
+			return allExpressions.filter((pair) => {
 				return show === 'Expressions'
 					? pair.expression.toLowerCase().includes(searchInput)
 					: getDefinition(pair.definition).toLowerCase().includes(searchInput);
 			});
 		}
-		return expDefPairs;
+		return allExpressions;
 	};
 
 	return (

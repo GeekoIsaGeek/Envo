@@ -7,7 +7,8 @@
 	gap: 10px;
 	align-items: center;
 	.SortBy,
-	.Toggler {
+	.Toggler,
+	.SelectCount {
 		box-shadow: variables.$box-shadow;
 		padding: 5px 15px;
 		border-radius: 5px;
@@ -74,15 +75,42 @@
 			color: white;
 		}
 	}
+	.SelectCount {
+		width: 100%;
+		min-width: 100px;
+		display: flex;
+		justify-content: space-between;
+		ul {
+			position: absolute;
+			bottom: -210px;
+			left: 0;
+		}
+	}
 }
-
+@media (max-width: 960px) {
+	.Wrapper {
+		gap: 5px;
+		.SelectCount,
+		.SortBy,
+		.Toggler,
+		.Shuffle {
+			font-size: 0.9rem;
+			padding: 5px 8px;
+			width: max-content;
+			svg {
+				font-size: 0.8rem;
+			}
+		}
+		.SelectCount {
+			ul {
+				bottom: -205px;
+			}
+		}
+	}
+}
 @media (max-width: 768px) {
 	.Wrapper {
 		margin-left: 30px;
-		.SortBy,
-		.Toggler {
-			font-size: 0.9rem;
-		}
 		.SortBy {
 			width: 94px;
 		}
@@ -103,8 +131,16 @@
 		.SortBy,
 		.Toggler {
 			ul {
-				bottom: -66px;
+				bottom: -35px;
 				padding: 5px 0;
+			}
+		}
+		.SelectCount {
+			position: absolute;
+			top: 12px;
+			left: 10px;
+			ul {
+				bottom: -154px;
 			}
 		}
 	}

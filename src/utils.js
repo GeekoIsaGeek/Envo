@@ -21,3 +21,22 @@ export const getListItems = (str) => {
 	}
 	return <p>{capitalize(str?.trim())}</p>;
 };
+
+export const returnNExpressions = (array, n) => {
+	if (array.length > n) {
+		let expressions = [];
+		for (let i = 0; i < n; i++) {
+			expressions.push(array[i]);
+		}
+		return expressions;
+	}
+	return array;
+};
+
+export const sortByDateAdded = (arr, arg) => {
+	if (arg === 'Oldest') {
+		return arr.sort((a, b) => a.date_added - b.date_added);
+	} else {
+		return arr.sort((a, b) => b.date_added - a.date_added);
+	}
+};

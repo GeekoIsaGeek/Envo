@@ -33,11 +33,20 @@
 @media (max-width: 768px) {
 	.Navigation {
 		font-size: 1rem;
+		.NavList {
+			align-items: flex-end;
+			width: max-content;
+			margin-right: 20px;
+		}
 	}
 }
 
 @media (max-width: 420px) {
 	.Navigation {
 		font-size: 0.8rem;
+		.NavList {
+			margin: auto;
+			width: 100%;
+		}
 	}
 }

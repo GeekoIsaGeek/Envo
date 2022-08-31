@@ -28,7 +28,7 @@
 	border: none;
 	outline: none;
 	margin-left: 10px;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	width: 100%;
 	color: #575757;
 }
@@ -40,8 +40,9 @@
 	.Logo {
 		position: absolute;
 		left: 10px;
-		top: 20px;
 		width: 60px;
+		bottom: 10px;
+		z-index: 3;
 	}
 	.Search {
 		width: 70vw;
@@ -59,14 +60,16 @@
 	.Wrapper {
 		flex-direction: column-reverse;
 		padding: 0;
+		.Logo {
+			display: none;
+		}
 	}
 	.Search {
 		max-width: max-content;
 		margin: 10px 5px 0 0;
 		border-radius: 10px;
-		align-self: end;
-	}
-	.Logo {
-		top: 10px;
+		align-self: flex-end;
+		max-width: unset;
+		width: 65%;
 	}
 }
