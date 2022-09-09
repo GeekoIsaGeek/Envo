@@ -17,11 +17,11 @@
 	font-family: variables.$font-source-sans-pro;
 
 	cursor: pointer;
-	transition: 0.15s linear;
+	transition: all 0.1s linear;
 }
 .Content > li:hover {
 	background: #3f3966ad;
-	transform: scale(1.035, 1.035);
+	transform: scale(1.035);
 	color: white;
 }
 

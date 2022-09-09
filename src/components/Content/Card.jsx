@@ -6,15 +6,15 @@ import { motion } from 'framer-motion';
 const Card = ({ setShowCard, data }) => {
 	return (
 		<motion.div
-			animate={{ opacity: [0, 1], transition: { duration: 0.5 } }}
-			exit={{ opacity: 0, transition: { duration: 0.3 } }}
+			animate={{ opacity: [0, 1], transition: { duration: 0.3 } }}
+			exit={{ opacity: 0, transition: { duration: 0.2 } }}
 			className={styles.Overlay}
 			onClick={() => setShowCard(false)}
 		>
 			<motion.div
-				animate={{ y: '0', opacity: 1, transition: { duration: 0.5, stiffness: 80, type: 'spring', delay: 0.3 } }}
+				animate={{ y: '0', opacity: 1, transition: { duration: 0.3, stiffness: 80, type: 'spring', delay: 0.15 } }}
 				initial={{ y: '-70%', opacity: 0 }}
-				exit={{ y: '-100%', opacity: [0.2, 0], transition: { duration: 0.3 } }}
+				exit={{ y: '-100%', opacity: [0.2, 0], transition: { duration: 0.2 } }}
 				className={styles.Card}
 				onClick={(e) => e.stopPropagation()}
 			>

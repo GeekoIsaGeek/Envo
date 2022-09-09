@@ -48,15 +48,9 @@ const Content = () => {
 			<AnimatePresence mode='wait'>
 				{filterBySearchValue().map((el, i) => {
 					return (
-						<motion.li
-							key={i}
-							onClick={() => handleClick(el)}
-							animate={{ opacity: 1 }}
-							initial={{ opacity: 0 }}
-							transition={{ duration: 0.3 }}
-						>
+						<li key={i} onClick={() => handleClick(el)}>
 							{show === 'Expressions' ? el.expression : getDefinition(el.definition)}
-						</motion.li>
+						</li>
 					);
 				})}
 				{showCard && <Card showCard={showCard} setShowCard={setShowCard} data={activeElementData} />}
