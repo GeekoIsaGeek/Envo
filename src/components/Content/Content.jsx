@@ -4,6 +4,7 @@ import styles from './Content.module.scss';
 import { useSelector } from 'react-redux';
 import { getAllExpressions } from '../../store/slices/ExpressionsSlice';
 import { returnNExpressions } from '../../utils';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Content = () => {
 	const [showCard, setShowCard] = useState(false);
@@ -44,14 +45,22 @@ const Content = () => {
 
 	return (
 		<ul className={styles.Content}>
-			{filterBySearchValue().map((el, i) => {
-				return (
-					<li key={i} onClick={() => handleClick(el)}>
-						{show === 'Expressions' ? el.expression : getDefinition(el.definition)}
-					</li>
-				);
-			})}
-			<Card showCard={showCard} setShowCard={setShowCard} data={activeElementData} />
+			<AnimatePresence mode='wait'>
+				{filterBySearchValue().map((el, i) => {
+					return (
+						<motion.li
+							key={i}
+							onClick={() => handleClick(el)}
+							animate={{ opacity: 1 }}
+							initial={{ opacity: 0 }}
+							transition={{ duration: 0.3 }}
+						>
+							{show === 'Expressions' ? el.expression : getDefinition(el.definition)}
+						</motion.li>
+					);
+				})}
+				{showCard && <Card showCard={showCard} setShowCard={setShowCard} data={activeElementData} />}
+			</AnimatePresence>
 		</ul>
 	);
 };

@@ -36,17 +36,12 @@ const Form = ({ formRef }) => {
 		signOut(auth);
 	};
 
-	const notificationStyles = { color: 'green', fontSize: '1.1rem', fontWeight: '500' };
+	const notificationStyles = { color: 'green', fontSize: '1.1rem', fontWeight: '400' };
 	return (
 		<form onSubmit={addNewData} className={styles.Form} ref={formRef}>
 			{status === 'added' && <p style={notificationStyles}>New data was added!</p>}
 			<Select category={category} setCategory={setCategory} />
-			<input
-				type='text'
-				placeholder='Expression'
-				ref={expressionRef}
-				className={styles.ExpressionInput}
-			/>
+			<input type='text' placeholder='Expression' ref={expressionRef} className={styles.ExpressionInput} />
 			<textarea placeholder='Definition...' ref={definitionRef} className={styles.Definition} />
 			<textarea placeholder='Examples...' ref={examplesRef} className={styles.Examples} />
 			<button>Add</button>

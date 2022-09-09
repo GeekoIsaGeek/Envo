@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Navigation.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setExpressionsType } from '../../store/slices/ExpressionsSlice';
+import { motion } from 'framer-motion';
 
 const Navigation = () => {
 	const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Navigation = () => {
 	};
 
 	return (
-		<nav className={styles.Navigation}>
+		<motion.nav className={styles.Navigation} animate={{ opacity: [0, 1] }} exit={{ opacity: [1, 0] }}>
 			<ul className={styles.NavList}>
 				<li
 					onClick={(e) => handleClick(e.target.innerText)}
@@ -39,7 +40,7 @@ const Navigation = () => {
 					Basic Phrases
 				</li>
 			</ul>
-		</nav>
+		</motion.nav>
 	);
 };
 

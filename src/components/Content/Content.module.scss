@@ -31,12 +31,13 @@
 	width: 100vw;
 	top: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 10;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	backdrop-filter: blur(70px);
 	background-color: #00000038;
+	cursor: zoom-out;
 }
 
 .Card {
@@ -53,6 +54,7 @@
 	flex-direction: column;
 	color: #f5eddf;
 	background-color: #33303a;
+	cursor: auto;
 }
 .Card h2 {
 	border-bottom: 1px solid #f5eddf;
