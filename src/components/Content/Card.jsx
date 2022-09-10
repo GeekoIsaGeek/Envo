@@ -3,21 +3,27 @@ import styles from './Content.module.scss';
 import { getListItems } from '../../utils';
 import { motion } from 'framer-motion';
 
+const wrapperVariants = {
+	visible: {
+		opacity: [0, 1],
+		transition: { duration: 0.2 },
+	},
+	hidden: {
+		opacity: [1, 0],
+		transition: { duration: 0.2 },
+	},
+};
+
 const Card = ({ setShowCard, data }) => {
 	return (
 		<motion.div
-			animate={{ opacity: [0, 1], transition: { duration: 0.3 } }}
-			exit={{ opacity: 0, transition: { duration: 0.2 } }}
+			variants={wrapperVariants}
+			animate='visible'
+			exit='hidden'
 			className={styles.Overlay}
 			onClick={() => setShowCard(false)}
 		>
-			<motion.div
-				animate={{ y: '0', opacity: 1, transition: { duration: 0.3, stiffness: 80, type: 'spring', delay: 0.15 } }}
-				initial={{ y: '-70%', opacity: 0 }}
-				exit={{ y: '-100%', opacity: [0.2, 0], transition: { duration: 0.2 } }}
-				className={styles.Card}
-				onClick={(e) => e.stopPropagation()}
-			>
+			<div className={styles.Card} onClick={(e) => e.stopPropagation()}>
 				<h2>~ {data.expression} ~</h2>
 				<ul>{getListItems(data.definition)}</ul>
 				{data.examples && (
@@ -26,7 +32,7 @@ const Card = ({ setShowCard, data }) => {
 						<ul className={styles.Examples}>{getListItems(data.examples)}</ul>
 					</>
 				)}
-			</motion.div>
+			</div>
 		</motion.div>
 	);
 };
