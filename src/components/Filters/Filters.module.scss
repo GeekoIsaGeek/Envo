@@ -77,7 +77,7 @@
 	}
 	.SelectCount {
 		width: 100%;
-		min-width: 100px;
+		min-width: max-content;
 		display: flex;
 		justify-content: space-between;
 		ul {
