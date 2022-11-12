@@ -61,6 +61,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		min-width: 50vw;
 		input {
 			font-weight: 600;
 		}
@@ -95,6 +96,19 @@
 			transition: background-color 0.2s ease-out;
 			&:hover {
 				background-color: rgb(80, 79, 95);
+			}
+		}
+	}
+	@media (max-width: 640px) {
+		max-width: unset;
+		width: 90vw;
+		.EditWrapper {
+			width: 100%;
+			input {
+				font-size: 18px;
+			}
+			textarea {
+				font-size: 16px !important;
 			}
 		}
 	}
@@ -179,6 +193,7 @@
 		}
 	}
 }
+
 @media (max-width: 420px) {
 	.Content {
 		font-size: 0.8rem;
