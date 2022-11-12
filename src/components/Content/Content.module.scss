@@ -55,6 +55,49 @@
 	color: #f5eddf;
 	background-color: #33303a;
 	cursor: auto;
+	position: relative;
+	.EditWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		input {
+			font-weight: 600;
+		}
+		input,
+		textarea {
+			background: rgba(255, 255, 255, 0.05);
+			border-radius: 5px;
+			padding: 10px;
+			border: none;
+			color: #f5eddf;
+			font-size: 20px;
+			text-align: center;
+			resize: none;
+			width: 100%;
+			outline-color: rgb(247, 233, 207);
+		}
+		textarea {
+			margin-top: -5px;
+		}
+
+		button {
+			border-radius: 10px;
+			border: none;
+			padding: 7px 20px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-top: 30px;
+			background-color: #696670;
+			color: #faf1e0;
+			font-weight: 500;
+			width: max-content;
+			transition: background-color 0.2s ease-out;
+			&:hover {
+				background-color: rgb(80, 79, 95);
+			}
+		}
+	}
 }
 .Card h2 {
 	border-bottom: 1px solid #f5eddf;
@@ -88,7 +131,24 @@
 	align-self: center;
 	text-align: start;
 }
-
+.Manage {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	justify-content: flex-end;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+.Manage > h4 {
+	font-weight: 400;
+	transition: 0.25s linear;
+}
+.Manage > h4:hover {
+	text-decoration: underline;
+	color: #bfbbc7;
+	cursor: pointer;
+}
 @media (max-width: 768px) {
 	.Content {
 		font-size: 0.9rem;

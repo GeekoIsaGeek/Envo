@@ -19,7 +19,7 @@ export const getListItems = (str) => {
 			return <li key={i}>{capitalize(elem.trim())}</li>;
 		});
 	}
-	return <p>{capitalize(str?.trim())}</p>;
+	return capitalize(str?.trim());
 };
 
 export const returnNExpressions = (array, n) => {
