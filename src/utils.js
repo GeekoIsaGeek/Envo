@@ -10,6 +10,8 @@ export const decomposeString = (str) => {
 	if (str) {
 		if (str.includes(',,')) {
 			return str.split(',,');
+		} else {
+			return str.split(' ');
 		}
 	}
 	return;
