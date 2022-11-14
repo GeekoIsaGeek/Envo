@@ -29,7 +29,12 @@ const Edit = ({ data, setEditMode, setShowCard }) => {
 				}
 			});
 			const filteredExpressions = expressions.filter((exp) => exp.expression !== data.expression);
-			dispatch(setExpressions([...filteredExpressions, { ...obj, definition, examples }]));
+			dispatch(
+				setExpressions([
+					...filteredExpressions,
+					{ ...obj, definition: decomposeString(definition), examples: decomposeString(examples) },
+				])
+			);
 		} catch (e) {
 			console.error(e.message);
 		}

@@ -4,7 +4,6 @@ import Login from './Login';
 import { useSelector, useDispatch } from 'react-redux';
 import { setStatus } from '../../store/slices/AddSlice';
 import Form from './Form';
-import { motion } from 'framer-motion';
 
 const Add = () => {
 	const formRef = useRef();
@@ -29,12 +28,12 @@ const Add = () => {
 	}
 
 	return (
-		<motion.div animate={{ opacity: [0, 1] }} exit={{ opacity: [1, 0] }} className={styles.Wrapper}>
+		<div className={styles.Wrapper}>
 			<Form formRef={formRef} />
 			<p className={styles.Note}>
 				In order to define multiple definitions or examples, put ,, at the end of every sentence
 			</p>
-		</motion.div>
+		</div>
 	);
 };
 
