@@ -3,10 +3,13 @@ import styles from './Navigation.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setExpressionsType } from '../../store/slices/ExpressionsSlice';
 import { motion } from 'framer-motion';
+import { MdPostAdd } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
 	const dispatch = useDispatch();
 	const type = useSelector((state) => state.expressions.expressionType);
+	const authenticated = useSelector((state) => state.add.authenticated);
 
 	const handleClick = (value) => {
 		dispatch(setExpressionsType(value));
@@ -39,6 +42,13 @@ const Navigation = () => {
 				>
 					Basic Phrases
 				</li>
+				{authenticated && (
+					<li>
+						<Link to='/add'>
+							<MdPostAdd />
+						</Link>
+					</li>
+				)}
 			</ul>
 		</motion.nav>
 	);

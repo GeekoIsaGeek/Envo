@@ -7,10 +7,20 @@ export const capitalize = (str) => {
 };
 
 export const decomposeString = (str) => {
-	if (str?.trim().includes(',,')) {
-		return str.split(',,');
+	if (str) {
+		if (str.includes(',,')) {
+			return str.split(',,');
+		}
 	}
 	return;
+};
+
+export const stringify = (str) => {
+	if (Array.isArray(str)) {
+		return str.join(',,');
+	} else {
+		return str;
+	}
 };
 
 export const getListItems = (str) => {

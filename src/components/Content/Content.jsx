@@ -4,7 +4,7 @@ import styles from './Content.module.scss';
 import { useSelector } from 'react-redux';
 import { getAllExpressions } from '../../store/slices/ExpressionsSlice';
 import { returnNExpressions } from '../../utils';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 const Content = () => {
 	const [showCard, setShowCard] = useState(false);
@@ -17,7 +17,6 @@ const Content = () => {
 		setShowCard(true);
 		setActiveElementData(data);
 	};
-
 	if (showN !== 'All') {
 		allExpressions = returnNExpressions(allExpressions, showN);
 	}

@@ -15,9 +15,19 @@
 .NavList {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	width: 100%;
 	padding: 10px 0px;
 	gap: 3vw;
+	li {
+		a {
+			font-size: 1.5rem;
+			display: flex;
+			@media (max-width: 640px) {
+				font-size: 1.2rem;
+			}
+		}
+	}
 }
 .NavList li {
 	padding: 5px 0;

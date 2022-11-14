@@ -28,14 +28,14 @@ const ExpressionsSlice = createSlice({
 		shuffle: (state) => {
 			for (let i = state.expressions.length - 1; i > 0; i--) {
 				const j = Math.floor(Math.random() * (i + 1));
-				[state.expressions[i], state.expressions[j]] = [
-					state.expressions[j],
-					state.expressions[i],
-				];
+				[state.expressions[i], state.expressions[j]] = [state.expressions[j], state.expressions[i]];
 			}
 		},
 		setExpressionsType: (state, action) => {
 			state.expressionType = action.payload;
+		},
+		setExpressions: (state, action) => {
+			state.expressions = action.payload;
 		},
 		addNewExpression: (state, action) => {
 			state.expressions.push(action.payload);
@@ -62,5 +62,5 @@ const ExpressionsSlice = createSlice({
 
 export const getAllExpressions = (state) => state.expressions.expressions;
 export default ExpressionsSlice.reducer;
-export const { shuffle, setExpressionsType, addNewExpression, showNExpressions, sortByDate } =
+export const { shuffle, setExpressionsType, setExpressions, addNewExpression, showNExpressions, sortByDate } =
 	ExpressionsSlice.actions;
