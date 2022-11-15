@@ -2,7 +2,7 @@
 
 ### Envo is a personal dictionary app, built to make the process of learning phrasal verbs and expressions more efficient.
 
-Every feature was designed to solve problems I usually come across while taking either physical or digital notes. For example, when I try to recall what a particular word means, my mind is doing its best to recollect the word's position on the paper or which ones came before and after it. I have a hard time fully turning my focus to the definition, therefore, using writing notebooks or digital notepads is not very helpful for me. To solve the problem mentioned above, I created a Shuffle button that will change the order of words/expressions when clicked and won't leave my mind a chance to focus on the sequence of words anymore.
+Every feature was designed to solve problems I usually come across while taking either physical or digital notes. 
 
 ### Libraries Used:
 
